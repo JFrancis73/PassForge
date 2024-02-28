@@ -205,7 +205,12 @@ def improve_dictionary(file_to_open):
     #print("      *         Using large wordlists in some         *")
     #print("      *       options bellow is NOT recommended!      *")
     #print("      *************************************************\r\n")
+    for i in listica:
+        if i.strip().isdigit():
+            years += [i.strip()]
+    listica = [i for i in listica if not i.isdigit()]
 
+    print(listica,"\n",years)
     conts = 'y'
 
     if conts == "y" and len(listic) > CONFIG["global"]["threshold"]:
